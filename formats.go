@@ -23,6 +23,8 @@ const (
 	FormatAlnumUnicode         FormatType = "alnum_unicode"
 	FormatNumeric              FormatType = "numeric"
 	FormatNumber               FormatType = "number"
+	FormatIdent                FormatType = "ident"
+	FormatIdentUnicode         FormatType = "ident_unicode"
 	FormatHexadecimal          FormatType = "hexadecimal"
 	FormatHEXColor             FormatType = "hexcolor"
 	FormatRGB                  FormatType = "rgb"
@@ -78,6 +80,8 @@ func getFormatTypeMap() map[FormatType]formatFunc {
 		FormatAlnumUnicode:         formatAlnumUnicode,
 		FormatNumeric:              formatNumeric,
 		FormatNumber:               formatNumber,
+		FormatIdent:                formatIdent,
+		FormatIdentUnicode:         formatIdentUnicode,
 		FormatHexadecimal:          formatHexadecimal,
 		FormatHEXColor:             formatHEXColor,
 		FormatRGB:                  formatRGB,
@@ -535,6 +539,14 @@ func formatNumber(value string) bool {
 // formatNumeric is the validation function for validating if the current field's value is a valid numeric value.
 func formatNumeric(value string) bool {
 	return numericRegex.MatchString(value)
+}
+
+func formatIdent(value string) bool {
+	return identRegex.MatchString(value)
+}
+
+func formatIdentUnicode(value string) bool {
+	return identUnicodeRegex.MatchString(value)
 }
 
 // formatAlnum is the validation function for validating if the current field's value is a valid alphanumeric value.

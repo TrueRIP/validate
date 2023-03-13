@@ -9,6 +9,8 @@ const (
 	alnumUnicodeRegexString          = "^[\\p{L}\\p{N}]+$"
 	numericRegexString               = "^[0-9]+$"
 	numberRegexString                = "^[-+]?[0-9]+(?:\\.[0-9]+)?$"
+	identRegexString                 = "^[a-zA-Z_][a-zA-Z0-9_]*$"
+	identUnicodeRegexString          = "^[\\p{L}_][\\p{L}\\p{N}_]+$"
 	hexadecimalRegexString           = "^[0-9a-fA-F]+$"
 	hexcolorRegexString              = "^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
 	rgbRegexString                   = "^rgb\\(\\s*(?:(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])|(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%\\s*,\\s*(?:0|[1-9]\\d?|1\\d\\d?|2[0-4]\\d|25[0-5])%)\\s*\\)$"
@@ -49,6 +51,8 @@ var (
 	alnumUnicodeRegex          = regexp.MustCompile(alnumUnicodeRegexString)
 	numericRegex               = regexp.MustCompile(numericRegexString)
 	numberRegex                = regexp.MustCompile(numberRegexString)
+	identRegex                 = regexp.MustCompile(identRegexString)
+	identUnicodeRegex          = regexp.MustCompile(identUnicodeRegexString)
 	hexadecimalRegex           = regexp.MustCompile(hexadecimalRegexString)
 	hexcolorRegex              = regexp.MustCompile(hexcolorRegexString)
 	rgbRegex                   = regexp.MustCompile(rgbRegexString)
