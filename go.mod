@@ -1,4 +1,4 @@
-module gopkg.in/cnp96/validate.v2
+module github.com/TrueRIP/validate
 
 go 1.11
 
